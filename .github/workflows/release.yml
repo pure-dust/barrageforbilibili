@@ -16,7 +16,7 @@ jobs:
       RELEASE_UPLOAD_ID: ${{ steps.create_release.outputs.id }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # 查询版本号（tag）
       - name: Query version number
         id: get_version
@@ -24,11 +24,11 @@ jobs:
         run: |
           export NODE_OPTIONS="--max_old_space_size=1024000"
           echo "using version tag ${GITHUB_REF:10}"
-          echo ::set-output name=version::"${GITHUB_REF:10}"
+          echo "version=${GITHUB_REF:10}"  >> $GITHUB_OUTPUT
       # 根据查询到的版本号创建 release
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v1
         env:
           NODE_OPTIONS: "--max_old_space_size=1024000"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -82,7 +82,7 @@ jobs:
       # 获取 yarn 缓存路径
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
 
       # 使用 yarn 缓存
       - name: Yarn cache
