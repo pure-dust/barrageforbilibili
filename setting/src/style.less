@@ -1,0 +1,67 @@
+@import "../../src/assets/css/fonts.css";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  background: #fff
+    linear-gradient(
+      -45deg,
+      rgba(176, 209, 217, 0.9) -20%,
+      rgba(176, 209, 217, 0.4) 50%,
+      rgba(176, 209, 217, 0.9) 120%
+    );
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  padding: 0 6px 12px;
+  user-select: none;
+}
+
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.n-color-picker {
+  width: 120px !important;
+  height: 27px;
+}
+
+.n-color-picker-trigger__fill {
+  inset: 0 !important;
+}
+
+.n-form-item-label__text {
+  font-family: SourceHanSansCN-Bold;
+  font-size: 14px;
+  color: #3e3e3e;
+}
