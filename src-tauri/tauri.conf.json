@@ -1,74 +1,79 @@
 {
-  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
-  "build": {
-    "beforeBuildCommand": "npm run build",
-    "beforeDevCommand": "npm run dev",
-    "devPath": "http://localhost:8080",
-    "distDir": "../dist"
-  },
-  "package": {
-    "productName": "barrageforbilibili",
-    "version": "0.1.0"
-  },
-  "tauri": {
-    "allowlist": {
-      "window": {
-        "all": true
-      },
-      "fs": {
-        "all": true,
-        "scope": ["$CONFIG/*", "$APPCONFIG/*"]
-      }
+    "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+    "build": {
+        "beforeBuildCommand": "npm run build",
+        "beforeDevCommand": "npm run dev",
+        "devPath": "http://localhost:8080",
+        "distDir": "../dist"
     },
-    "systemTray": {
-      "iconPath": "icons/bilibili.ico",
-      "iconAsTemplate": true
+    "package": {
+        "productName": "barrageforbilibili",
+        "version": "0.1.1"
     },
-    "bundle": {
-      "active": true,
-      "category": "DeveloperTool",
-      "copyright": "",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
-      "icon": ["icons/bilibili.ico"],
-      "identifier": "barrageforbilibili",
-      "longDescription": "",
-      "macOS": {
-        "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
-        "providerShortName": null,
-        "signingIdentity": null
-      },
-      "resources": [],
-      "shortDescription": "",
-      "targets": "all",
-      "windows": {
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": ""
-      }
-    },
-    "security": {
-      "csp": null
-    },
-    "updater": {
-      "active": false
-    },
-    "windows": [
-      {
-        "fullscreen": false,
-        "height": 480,
-        "resizable": false,
-        "title": "barrageforbilibili",
-        "skipTaskbar": true,
-        "width": 280,
-        "decorations": false,
-        "transparent": true,
-        "alwaysOnTop": true
-      }
-    ]
-  }
+    "tauri": {
+        "allowlist": {
+            "window": {
+                "all": true
+            },
+            "fs": {
+                "all": true,
+                "scope": [
+                    "$CONFIG/*",
+                    "$APPCONFIG/*"
+                ]
+            }
+        },
+        "systemTray": {
+            "iconPath": "icons/bilibili.ico",
+            "iconAsTemplate": true
+        },
+        "bundle": {
+            "active": true,
+            "category": "DeveloperTool",
+            "copyright": "",
+            "deb": {
+                "depends": []
+            },
+            "externalBin": [],
+            "icon": [
+                "icons/bilibili.ico"
+            ],
+            "identifier": "barrageforbilibili",
+            "longDescription": "",
+            "macOS": {
+                "entitlements": null,
+                "exceptionDomain": "",
+                "frameworks": [],
+                "providerShortName": null,
+                "signingIdentity": null
+            },
+            "resources": [],
+            "shortDescription": "",
+            "targets": "all",
+            "windows": {
+                "certificateThumbprint": null,
+                "digestAlgorithm": "sha256",
+                "timestampUrl": ""
+            }
+        },
+        "security": {
+            "csp": null
+        },
+        "updater": {
+            "active": false
+        },
+        "windows": [
+            {
+                "fullscreen": false,
+                "height": 480,
+                "resizable": false,
+                "title": "barrageforbilibili",
+                "skipTaskbar": true,
+                "width": 280,
+                "decorations": false,
+                "transparent": true,
+                "alwaysOnTop": true
+            }
+        ]
+    }
 }
