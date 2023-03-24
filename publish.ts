@@ -54,8 +54,8 @@ async function deploy_version(version: string) {
     pkg.version = version
     tauriPkg.package.version = version
     chalk.red("开始修改版本号.....")
-    fs.writeFileSync("./package.json", JSON.stringify(pkg, null, 4))
-    fs.writeFileSync("./src-tauri/tauri.conf.json", JSON.stringify(tauriPkg, null, 4))
+    fs.writeFileSync("./package.json", JSON.stringify(pkg, null, 2))
+    fs.writeFileSync("./src-tauri/tauri.conf.json", JSON.stringify(tauriPkg, null, 2))
     //    修改完文件,开始打tag推送
     chalk.green("准备推送发版....")
     // @ts-ignore
