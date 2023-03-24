@@ -1,18 +1,67 @@
-# Vue 3 + TypeScript + Vite
+<br />
+<p align="center">
+  <a href="https://github.com/pure-dust/barrageforbilibili" target="blank">
+    <img src="src-tauri/icons/bilibili.ico" alt="Logo" width="156" height="156">
+  </a>
+  <h2 align="center" style="font-weight: 600">Barrage For Bilibili</h2>
+</p>
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 简介
+- 本项目是个人兴趣使然所开发的一个bilibili直播弹幕姬  
+- 使用tauri框架进行开发
+- 目前功能简单，更多复杂功能将在后续版本中更新
+- 如有需求或者bug请提出一个 [issue](https://github.com/pure-dust/barrageforbilibili/issues) 来描述所需要的功能或者遇到的问题  
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 安装
 
-## Type Support For `.vue` Imports in TS
+访问 [Releases](https://github.com/pure-dust/barrageforbilibili/releases)页面下载安装包。  
+目前只支持 windows(10/11)平台  
+如果有其他平台需求请自行在开发环境中进行适配打包
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## 打包客户端
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+```shell
+# 打包命令
+npm run tauri build
+# or
+yarn tauri build
+```
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## 开发环境配置
+
+需要自行安装 [Nodejs](https://nodejs.org/) 与 [Rust](https://www.rust-lang.org/zh-CN/tools/install) 环境
+
+运行本项目（假设已经配置完成正确的开发环境）
+
+```shell
+# 安装node依赖
+yarn
+# or
+npm install
+
+# 运行
+yarn tauri dev
+# or
+npm run tauri dev
+# 在运行之前，cargo会自动下载所需要的依赖
+```
+
+## 开源许可
+
+本项目仅供个人学习研究使用，禁止用于商业及非法用途。  
+基于 [MIT license](https://opensource.org/licenses/MIT) 许可进行开源。
+
+## 软件截图
+
+<p align="center">
+    <img src="images/login.png" alt="login" >
+</p>
+
+<p align="center">
+    <img src="images/main.png" alt="login" >
+</p>
+
+<p align="center">
+    <img src="images/setting.png" alt="login" >
+</p>
