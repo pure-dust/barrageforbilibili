@@ -17,7 +17,10 @@
       },
       "fs": {
         "all": true,
-        "scope": ["$CONFIG/*", "$APPCONFIG/*"]
+        "scope": [
+          "$CONFIG/*",
+          "$APPCONFIG/*"
+        ]
       }
     },
     "systemTray": {
@@ -32,7 +35,10 @@
         "depends": []
       },
       "externalBin": [],
-      "icon": ["icons/bilibili.png", "icons/bilibili.ico"],
+      "icon": [
+        "icons/bilibili.png",
+        "icons/bilibili.ico"
+      ],
       "identifier": "barrageforbilibili",
       "longDescription": "",
       "macOS": {
