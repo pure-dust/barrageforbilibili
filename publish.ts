@@ -65,7 +65,7 @@ async function deploy_version(version: string) {
     // @ts-ignore
     shell.exec("git tag -a " + "v" + version + " -m '" + version + "'")
     // @ts-ignore
-    shell.exec("git push origin master --tags")
+    shell.exec("git push origin main --tags")
   } catch (e) {
     console.log("错误", e)
   }
