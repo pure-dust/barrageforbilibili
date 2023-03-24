@@ -24,7 +24,7 @@
       }
     },
     "systemTray": {
-      "iconPath": "icons/bilibili.ico",
+      "iconPath": "icons/bilibili.png",
       "iconAsTemplate": true
     },
     "bundle": {
@@ -36,7 +36,7 @@
       },
       "externalBin": [],
       "icon": [
-        "icons/bilibili.ico"
+        "icons/bilibili.png"
       ],
       "identifier": "barrageforbilibili",
       "longDescription": "",
