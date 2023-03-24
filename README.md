@@ -16,8 +16,10 @@
 ## 安装
 
 访问 [Releases](https://github.com/pure-dust/barrageforbilibili/releases)页面下载安装包。  
-目前只支持 windows(10/11)平台  
-如果有其他平台需求请自行在开发环境中进行适配打包
+~~目前只支持 windows(10/11)平台~~  
+windows: win10/win11  
+macos: 使用github action打包，请自行下载验证  
+linux: 使用github action打包，请自行下载验证
 
 ## 打包客户端
 
