@@ -23,6 +23,7 @@ export function set_vars(config: Setting) {
     --danmu-time-size: ${danmu.time_text_size}px;
     --danmu-user-size: ${danmu.user_text_size}px;
     --danmu-size: ${danmu.danmu_text_size}px;
+    --danmu-hieght: ${danmu.danmu_text_size + 2}px;
     --danmu-time-color: ${danmu.time_color};
     --danmu-user-color: ${danmu.user_color};
     --danmu-color: ${danmu.danmu_color};
@@ -33,6 +34,7 @@ export function set_vars(config: Setting) {
     --gift-color: ${gift.danmu_color};
 
     --interact-user-size: ${interact.user_text_size}px;
+    --interact-height: ${Math.max(interact.user_text_size, interact.danmu_text_size) + 8}px;
     --interact-size: ${interact.danmu_text_size}px;
     --interact-user-color: ${interact.user_color};
     --interact-color: ${interact.danmu_color};

@@ -67,9 +67,9 @@
       {
         "fullscreen": false,
         "height": 480,
-        "resizable": false,
+        "resizable": true,
         "title": "barrageforbilibili",
-        "skipTaskbar": true,
+        "skipTaskbar": false,
         "width": 280,
         "decorations": false,
         "transparent": true,

@@ -17,7 +17,7 @@ pub async fn request(
             v.parse().unwrap(),
         );
     }
-    let response = match &method.to_uppercase() as &str {
+    let response = match method.to_uppercase().as_str() {
         "GET" => get(url, params, _headers).await,
         "POST" => post(url, params, _headers).await,
         _ => get(url, params, _headers).await,

@@ -268,10 +268,13 @@ onUnmounted(() => {
   flex-direction: column;
   overflow: hidden;
   padding: 24px 10px 10px;
+
+
   .wrapper {
     flex: 1;
     height: 0;
     overflow: hidden auto;
+    margin-bottom: 4px;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -292,8 +295,8 @@ onUnmounted(() => {
   .interact-wrapper {
     display: flex;
     font-size: 12px;
-    height: 20px;
     padding: 0 4px;
+    height: var(--interact-height);
 
     .interact-inner {
       overflow: hidden;

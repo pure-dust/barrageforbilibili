@@ -83,11 +83,12 @@ const text = computed(() => {
   }
 
   .message-right {
+    vertical-align: middle;
     font-size: var(--danmu-size);
     color: var(--danmu-color);
     display: inline;
     line-height: 20px;
-    vertical-align: middle;
+    line-height: var(--danmu-hieght);
 
     .emoji {
       height: 20px;
@@ -103,6 +104,7 @@ const text = computed(() => {
       display: flex;
       align-items: center;
       margin-top: 2px;
+      line-height: var(--danmu-hieght);
     }
   }
 }
