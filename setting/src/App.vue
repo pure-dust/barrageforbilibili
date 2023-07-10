@@ -108,7 +108,7 @@ const config = [
       { label: "时间字体大小", type: "number", prop: "time_text_size" },
       { label: "用户字体大小", type: "number", prop: "user_text_size" },
       { label: "弹幕字体大小", type: "number", prop: "danmu_text_size" },
-      { label: "弹幕字体大小", type: "number", prop: "danmu_head_size" },
+      { label: "用户头像大小", type: "number", prop: "danmu_head_size" },
       { label: "时间字体颜色", type: "color", prop: "time_color" },
       { label: "用户字体颜色", type: "color", prop: "user_color" },
       { label: "弹幕字体颜色", type: "color", prop: "danmu_color" },
