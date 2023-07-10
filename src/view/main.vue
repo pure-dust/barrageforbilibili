@@ -57,6 +57,7 @@ import { is_empty } from "../utils/utils"
 import { set_vars, load_config } from "../utils/setting"
 import { get_room_info, get_gift_config } from "../api"
 import { useGlobal } from "../store"
+import decode_danmuv2 from "../utils/danmuv2"
 
 const route = useRoute()
 const { lock } = storeToRefs(useGlobal())
@@ -205,6 +206,7 @@ const deal_message = (msg: Message<DanmuMsg> | Message<GiftMsg>) => {
   if (config.shield.list.includes(msg.body.user.uid)) {
     return
   }
+  msg.body.user.face = decode_danmuv2(msg.raw.dm_v2)
   let last = state.message_queue.at(-1) || state.message_list.at(-1)
   if (msg.type === "SEND_GIFT" && last?.type === "SEND_GIFT") {
     if (msg.body.user.uid === last?.body.user.uid) {
@@ -268,7 +270,6 @@ onUnmounted(() => {
   flex-direction: column;
   overflow: hidden;
   padding: 24px 10px 10px;
-
 
   .wrapper {
     flex: 1;

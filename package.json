@@ -13,11 +13,13 @@
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",
     "blive-message-listener": "^0.4.4",
+    "buffer": "^6.0.3",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
     "nanoid": "^4.0.1",
     "pako": "^2.1.0",
     "pinia": "^2.0.33",
+    "protobufjs": "^7.2.4",
     "qrcode": "^1.5.1",
     "vue": "^3.2.45",
     "vue-router": "4"

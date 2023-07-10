@@ -65,7 +65,10 @@ const text = computed(() => {
 })
 
 onMounted(async () => {
-  await store.update_face(props.message.body.user.uid, face)
+  face.value = props.message.body.user.face || ""
+  if (!face.value) {
+    await store.update_face(props.message.body.user.uid, face)
+  }
 })
 </script>
 <style lang="less">

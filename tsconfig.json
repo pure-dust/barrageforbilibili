@@ -21,7 +21,7 @@
     "setting/**/*.ts",
     "setting/**/*.vue",
     "typings/*.d.ts",
-    "node_modules/blive-message-listener/*.d.ts"
+    "node_modules/blive-message-listener/*.d.ts",
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
