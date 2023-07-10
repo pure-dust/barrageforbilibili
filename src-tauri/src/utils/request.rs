@@ -1,7 +1,18 @@
+use once_cell::sync::Lazy;
 use std::{collections::HashMap, str::FromStr};
 
-use reqwest::header::{HeaderMap, HeaderName};
+use reqwest::{
+    header::{HeaderMap, HeaderName},
+    Client,
+};
 use serde_json::{self, Value};
+
+static CLIENT: Lazy<Client> = Lazy::new(|| {
+    reqwest::Client::builder()
+        .cookie_store(true)
+        .build()
+        .unwrap()
+});
 
 #[tauri::command]
 pub async fn request(
@@ -33,12 +44,11 @@ async fn get(
     params: HashMap<String, Value>,
     headers: HeaderMap,
 ) -> Result<HashMap<String, Value>, reqwest::Error> {
-    let client = reqwest::Client::new();
     let mut query = vec![];
     for (k, v) in params {
         query.push((k, v))
     }
-    Ok(client
+    Ok(CLIENT
         .get(url)
         .query(&query)
         .headers(headers)
@@ -53,9 +63,7 @@ async fn post(
     params: HashMap<String, Value>,
     headers: HeaderMap,
 ) -> Result<HashMap<String, Value>, reqwest::Error> {
-    let client = reqwest::Client::new();
-
-    Ok(client
+    Ok(CLIENT
         .post(url)
         .json(&params)
         .headers(headers)

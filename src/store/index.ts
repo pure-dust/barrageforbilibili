@@ -33,7 +33,7 @@ export const useGlobal = defineStore("global", {
           }
           const cb = this.queue.pop()!
           await cb()
-        }, 1000)
+        }, 3.5 * 1000)
       }
     },
   },
