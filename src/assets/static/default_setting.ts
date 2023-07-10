@@ -9,6 +9,7 @@ export default {
     next_line: true,
     show_user: false,
     time_text_size: 12,
+    danmu_head_size: 36,
     time_color: "#90D1FFFF",
   },
   gift: {

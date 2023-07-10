@@ -27,6 +27,7 @@ export function set_vars(config: Setting) {
     --danmu-time-color: ${danmu.time_color};
     --danmu-user-color: ${danmu.user_color};
     --danmu-color: ${danmu.danmu_color};
+    --danmu-head-size: ${danmu.danmu_head_size}px;
 
     --gift-user-size: ${gift.user_text_size}px;
     --gift-size: ${gift.danmu_text_size}px;

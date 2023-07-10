@@ -19,6 +19,7 @@ interface Setting {
     time_color: string,
     user_color: string
     danmu_color: string
+    danmu_head_size: number
     [key: string]: any
   }
   gift: {

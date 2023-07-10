@@ -9,6 +9,7 @@ import { useGlobal } from "./store"
 
 import drag from "./view/drag.vue"
 import { load_config, set_vars } from "./utils/setting"
+import { get_user_info } from "./api"
 
 const store = useGlobal()
 

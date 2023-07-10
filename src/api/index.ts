@@ -1,4 +1,5 @@
 import { invoke } from "@tauri-apps/api"
+import get_wbi_key from "../utils/wpi"
 
 const headers = {
   Accept: "*/*",
@@ -79,4 +80,39 @@ export async function get_gift_config(room_id: number) {
       headers,
     })
   ).data
+}
+
+export async function get_wbi_keys() {
+  const resp = await invoke<{
+    data: {
+      wbi_img: { img_url: string; sub_url: string }
+    }
+  }>("request", {
+    method: "GET",
+    url: "https://api.bilibili.com/x/web-interface/nav",
+    params: {},
+  })
+
+  const img_url = resp.data.wbi_img.img_url
+  const sub_url = resp.data.wbi_img.sub_url
+  return {
+    img_key: img_url.substring(img_url.lastIndexOf("/") + 1, img_url.length).split(".")[0],
+    sub_key: sub_url.substring(sub_url.lastIndexOf("/") + 1, sub_url.length).split(".")[0],
+  }
+}
+
+export async function get_user_info(mid: number) {
+  const data = await invoke<{
+    data: {
+      card: {
+        face: string
+      }
+    }
+  }>("request", {
+    method: "GET",
+    url: "https://api.bilibili.com/x/web-interface/card",
+    params: { mid, photo: false },
+    headers,
+  })
+  return data.data.card.face
 }
