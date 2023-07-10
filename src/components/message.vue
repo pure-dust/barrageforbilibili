@@ -78,7 +78,6 @@ onMounted(async () => {
   line-height: 18px;
   word-wrap: break-word;
   white-space: normal;
-  font-family: SourceHanSansCN-Heavy;
   display: flex;
   align-items: center;
 
@@ -107,6 +106,7 @@ onMounted(async () => {
       font-size: var(--danmu-time-size);
       vertical-align: middle;
       margin-right: 4px;
+      font-family: SourceHanSansCN-Heavy;
     }
 
     .message-left {
@@ -117,6 +117,8 @@ onMounted(async () => {
         color: var(--danmu-user-color);
         font-size: var(--danmu-user-size);
         vertical-align: middle;
+        font-family: SourceHanSansCN-Heavy;
+        font-family: SourceHanSansCN-Heavy;
       }
     }
 
@@ -127,6 +129,7 @@ onMounted(async () => {
       display: inline;
       line-height: 20px;
       line-height: var(--danmu-hieght);
+      font-family: SourceHanSansCN-Heavy;
 
       .emoji {
         height: 20px;
