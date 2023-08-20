@@ -31,48 +31,5 @@ const props = defineProps<{
 }>()
 </script>
 <style lang="less">
-.gift-item {
-  font-size: 12px;
-  padding: 4px;
-  line-height: 18px;
-  word-wrap: break-word;
-  white-space: normal;
 
-  .gift-left {
-    display: inline;
-  }
-
-  .gift-right {
-    display: inline;
-    line-height: 20px;
-    vertical-align: middle;
-    align-items: center;
-
-    .name {
-      color: var(--gift-user-color);
-      font-size: var(--gift-user-size);
-      margin-right: 4px;
-    }
-
-    .action {
-      color: var(--gift-user-color);
-      font-size: var(--gift-user-size);
-    }
-
-    .gift-count {
-      margin: 0 4px;
-    }
-
-    .gift-name {
-      font-size: var(--gift-size);
-      color: var(--gift-color);
-      margin-right: 4px;
-    }
-
-    .gift-img {
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
-}
 </style>

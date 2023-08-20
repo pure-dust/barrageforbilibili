@@ -2,7 +2,7 @@ import { createApp } from "vue"
 import { createPinia } from "pinia"
 import { init_setting } from "./utils/preload"
 import router from "./router"
-import "./style.css"
+import "./styles/index.less"
 
 import App from "./App.vue"
 

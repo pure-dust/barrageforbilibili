@@ -56,23 +56,5 @@ listen("config", () => {
 })
 </script>
 <style lang="less">
-.drag {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  padding: 8px 8px 0;
 
-  &.locked {
-    display: none;
-  }
-
-  span {
-    cursor: pointer;
-  }
-}
 </style>

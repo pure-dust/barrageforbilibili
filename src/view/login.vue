@@ -74,52 +74,5 @@ onMounted(async () => {
 })
 </script>
 <style lang="less">
-.login {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  .qrcode {
-    margin-bottom: 48px;
-  }
-
-  .room-id {
-    appearance: none;
-    outline: none;
-    border: none;
-    padding: 4px 8px;
-    background-color: rgba(67, 67, 67, 0.5);
-    border-radius: 1px;
-    transition: 0.2s;
-    width: 120px;
-    margin-bottom: 12px;
-    color: #fff;
-    text-align: center;
-
-    &:focus {
-      box-shadow: 0 0 10px 2px rgba(112, 112, 112, 0.3);
-    }
-  }
-
-  .enter-btn {
-    appearance: none;
-    border: none;
-    width: 120px;
-    padding: 4px 8px;
-    background: #0f7fce;
-    color: #fff;
-    transition: 0.2s;
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 0 10px 2px rgba(20, 124, 227, 0.525);
-    }
-
-    &:active {
-      box-shadow: 0 0 10px 2px rgba(112, 112, 112, 0.3);
-    }
-  }
-}
 </style>
