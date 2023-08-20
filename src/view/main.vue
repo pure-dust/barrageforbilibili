@@ -1,6 +1,6 @@
 <template>
   <div :class="['barrage', { locked: lock }]">
-    <div class="wrapper" ref="wrapper" @wheel.stop.capture.passive="on_wheel">
+    <div class="main-wrapper" ref="wrapper" @wheel.stop.capture.passive="on_wheel">
       <transition-group name="danmu">
         <template v-for="item in state.message_list" :key="item.id">
           <message
@@ -19,9 +19,9 @@
         </template>
       </transition-group>
     </div>
-    <div class="interact-wrapper" v-if="show_interact">
+    <div class="interact" v-if="show_interact">
       <Transition name="interact" mode="out-in">
-        <div class="interact-inner" v-show="state.interact_animate">
+        <div class="interact-wrapper" v-show="state.interact_animate">
           <div
             class="medal"
             v-show="config.interact.show_medal && state.interact.body.user.badge?.active"
@@ -34,9 +34,9 @@
               {{ state.interact.body.user.badge?.level }}
             </div>
           </div>
-          <div class="msg">
-            <span class="name"> {{ state.interact.body.user.uname }} </span>
-            <span class="common">进入直播间 </span>
+          <div class="interact-msg">
+            <span class="interact-msg-name"> {{ state.interact.body.user.uname }} </span>
+            <span class="interact-msg-text">进入直播间 </span>
           </div>
         </div>
       </Transition>

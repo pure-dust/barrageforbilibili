@@ -1,4 +1,4 @@
-@import "./assets/css/fonts.css";
+@import "../assets/css/fonts.css";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -124,7 +124,7 @@ body,
   overflow: hidden;
   padding: 24px 10px 10px;
 
-  .wrapper {
+  .main-wrapper {
     flex: 1;
     height: 0;
     overflow: hidden auto;
@@ -146,29 +146,29 @@ body,
     }
   }
 
-  .interact-wrapper {
+  .interact {
     display: flex;
     font-size: 12px;
     padding: 0 4px;
     height: var(--interact-height);
 
-    .interact-inner {
+    &-wrapper {
       overflow: hidden;
     }
 
-    .msg {
+    &-msg {
       display: inline-block;
       vertical-align: middle;
       white-space: nowrap;
       text-overflow: ellipsis;
 
-      .name {
+      &-name {
         margin-right: 5px;
         font-size: var(--interact-user-size);
         color: var(--interact-user-color);
       }
 
-      .common {
+      &-text {
         text-overflow: ellipsis;
         font-size: var(--interact-size);
         color: var(--interact-color);
@@ -219,52 +219,48 @@ body,
   }
 }
 
-.gift-item {
+.gift {
   font-size: 12px;
   padding: 4px;
   line-height: 18px;
   word-wrap: break-word;
   white-space: normal;
 
-  .gift-left {
-    display: inline;
-  }
-
-  .gift-right {
+  &-text {
     display: inline;
     line-height: 20px;
     vertical-align: middle;
     align-items: center;
+  }
 
-    .name {
-      color: var(--gift-user-color);
-      font-size: var(--gift-user-size);
-      margin-right: 4px;
-    }
+  &-name {
+    color: var(--gift-user-color);
+    font-size: var(--gift-user-size);
+    margin-right: 4px;
+  }
 
-    .action {
-      color: var(--gift-user-color);
-      font-size: var(--gift-user-size);
-    }
+  &-action {
+    color: var(--gift-user-color);
+    font-size: var(--gift-user-size);
+  }
 
-    .gift-count {
-      margin: 0 4px;
-    }
+  &-count {
+    margin: 0 4px;
+  }
 
-    .gift-name {
-      font-size: var(--gift-size);
-      color: var(--gift-color);
-      margin-right: 4px;
-    }
+  &-name {
+    font-size: var(--gift-size);
+    color: var(--gift-color);
+    margin-right: 4px;
+  }
 
-    .gift-img {
-      display: inline-block;
-      vertical-align: middle;
-    }
+  &-img {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
-.message-item {
+.message {
   font-size: 12px;
   padding: 4px;
   line-height: 18px;
@@ -273,7 +269,7 @@ body,
   display: flex;
   align-items: center;
 
-  .message-user {
+  &-user {
     margin-right: 6px;
 
     .face-wrapper {
@@ -292,53 +288,51 @@ body,
     }
   }
 
-  .message-body {
-    .message-time {
-      color: var(--danmu-time-color);
-      font-size: var(--danmu-time-size);
+  &-time {
+    color: var(--danmu-time-color);
+    font-size: var(--danmu-time-size);
+    vertical-align: middle;
+    margin-right: 4px;
+    font-family: SourceHanSansCN-Heavy;
+  }
+
+  &-info {
+    display: inline;
+    vertical-align: middle;
+
+    .name {
+      color: var(--danmu-user-color);
+      font-size: var(--danmu-user-size);
       vertical-align: middle;
-      margin-right: 4px;
       font-family: SourceHanSansCN-Heavy;
-    }
-
-    .message-left {
-      display: inline;
-      vertical-align: middle;
-
-      .name {
-        color: var(--danmu-user-color);
-        font-size: var(--danmu-user-size);
-        vertical-align: middle;
-        font-family: SourceHanSansCN-Heavy;
-        font-family: SourceHanSansCN-Heavy;
-      }
-    }
-
-    .message-right {
-      vertical-align: middle;
-      font-size: var(--danmu-size);
-      color: var(--danmu-color);
-      display: inline;
-      line-height: 20px;
-      line-height: var(--danmu-hieght);
       font-family: SourceHanSansCN-Heavy;
-
-      .emoji {
-        height: 20px;
-        vertical-align: middle;
-      }
-
-      .emoticon {
-        height: 40px;
-        vertical-align: middle;
-      }
-
-      &.next-line {
-        display: flex;
-        align-items: center;
-        margin-top: 2px;
-        line-height: var(--danmu-hieght);
-      }
     }
   }
+
+  &-text {
+    vertical-align: middle;
+    font-size: var(--danmu-size);
+    color: var(--danmu-color);
+    display: inline;
+    line-height: 20px;
+    line-height: var(--danmu-hieght);
+    font-family: SourceHanSansCN-Heavy;
+
+    &.next-line {
+      display: flex;
+      align-items: center;
+      margin-top: 2px;
+      line-height: var(--danmu-hieght);
+    }
+  }
+}
+
+.emoji {
+  height: 20px;
+  vertical-align: middle;
+}
+
+.emoticon {
+  height: 40px;
+  vertical-align: middle;
 }

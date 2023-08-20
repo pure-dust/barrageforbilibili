@@ -98,17 +98,12 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   padding: 8px;
-  background: #fff
-    linear-gradient(
-      -45deg,
-      rgba(176, 209, 217, 0.9) -20%,
-      rgba(176, 209, 217, 0.4) 50%,
-      rgba(176, 209, 217, 0.9) 120%
-    );
-  box-shadow: 0 0 15px #999;
+  background: #131313;
+  box-shadow: 0 0 15px #222;
   transition: 0.2s;
   transform-origin: center;
   animation: enter 0.3s 1 forwards;
+  color: var(--primary-color);
 
   @keyframes enter {
     0% {
@@ -157,7 +152,7 @@ onMounted(() => {
         left: 100%;
         font-size: 12px;
         background: #000;
-        color: #fff;
+        color: var(--primary-color);
         padding: 2px 4px;
         transition: 0.2s;
       }
@@ -170,7 +165,7 @@ onMounted(() => {
       width: 100%;
       text-align: center;
       background: #000;
-      color: #fff;
+      color: var(--primary-color);
       font-family: SourceHanSansCN-Bold;
     }
   }

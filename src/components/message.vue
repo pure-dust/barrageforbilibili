@@ -1,12 +1,12 @@
 <template>
-  <div class="message-item">
+  <div class="message">
     <div v-if="show_user" class="message-user">
       <div class="face-wrapper">
         <img :src="face || 'http://i0.hdslb.com/bfs/face/member/noface.jpg'" alt="" />
       </div>
     </div>
-    <div class="message-body">
-      <div class="message-left">
+    <div>
+      <div class="message-info">
         <span v-if="show_time" class="message-time">{{ format(message.timestamp, "hh:mm") }}</span>
         <div
           class="medal"
@@ -22,7 +22,7 @@
         </div>
         <span class="name">{{ message.body.user.uname }} : </span>
       </div>
-      <div :class="['message-right', { 'next-line': next_line }]" v-html="text"></div>
+      <div :class="['message-text', { 'next-line': next_line }]" v-html="text"></div>
     </div>
   </div>
 </template>

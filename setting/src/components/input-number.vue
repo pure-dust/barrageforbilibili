@@ -67,13 +67,14 @@ onMounted(() => {
     padding: 4px 8px;
     outline: none;
     text-align: center;
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(73, 73, 73, 0.7);
     transition: 0.2s;
     font-family: SourceHanSansCN-Bold;
     font-size: 12px;
+    color: var(--primary-color);
 
     &::selection {
-      color: #fff;
+      color: var(--primary-color);
       background: #000;
     }
 

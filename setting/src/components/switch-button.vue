@@ -38,8 +38,9 @@ const on_switch = () => {
   position: relative;
   transition: 0.2s;
   user-select: none;
-  background: rgba(255, 255, 255, 0.35);
+  background: #1b1b1b;
   font-family: SourceHanSansCN-Bold;
+  color: #636363;
 
   &::before {
     content: "";
@@ -49,12 +50,12 @@ const on_switch = () => {
     height: 100%;
     top: 0;
     left: -100%;
-    background-color: #000;
+    background-color: rgba(73, 73, 73, 0.7);
     transition: 0.2s;
   }
 
   &:not(.active):hover {
-    color: #e0f3fe;
+    color: var(--primary-color);
 
     &::before {
       left: -50%;
@@ -62,7 +63,7 @@ const on_switch = () => {
   }
 
   &.active {
-    color: #e0f3fe;
+    color: var(--primary-color);
   }
 
   &.active::before {

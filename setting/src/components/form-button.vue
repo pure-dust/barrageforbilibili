@@ -20,15 +20,15 @@ const on_click = () => {
   border: none;
   outline: none;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.35);
+  background: #1b1b1b;
   transition: 0.2s;
   user-select: none;
   padding: 4px 8px;
   width: 120px;
+  color: var(--primary-color);
 
   &:hover {
-    background: #000;
-    color: #fff;
+    background: #292929;
   }
 }
 </style>

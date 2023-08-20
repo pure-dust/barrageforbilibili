@@ -1,31 +1,37 @@
 <template>
   <setting-header @submit="on_save"></setting-header>
   <div class="main">
-    <n-form label-placement="left" label-align="left" label-width="125" :show-feedback="false">
-      <template v-for="cfg in config">
-        <div class="setting-section">{{ cfg.label }}</div>
-        <div class="danmu-section">
-          <n-form-item v-for="item in cfg.cfg" :label="item.label">
-            <switch-button
-              v-if="item.type === 'switch'"
-              v-model="setting[cfg.prop][item.prop]"
-            ></switch-button>
-            <input-number
-              v-else-if="item.type === 'number'"
-              v-model="setting[cfg.prop][item.prop]"
-            ></input-number>
-            <form-button v-else-if="item.type === 'btn'" @click="item.cb">{{
-              item.text
-            }}</form-button>
-            <color-picker
-              v-else="item.type === 'color'"
-              v-model:value="setting[cfg.prop][item.prop]"
-              :modes="['hex']"
-            ></color-picker>
-          </n-form-item>
-        </div>
-      </template>
-    </n-form>
+    <n-config-provider :theme="state.darkTheme">
+      <n-form label-placement="left" label-align="left" label-width="125" :show-feedback="false">
+        <template v-for="cfg in config">
+          <div class="setting-section">{{ cfg.label }}</div>
+          <div class="danmu-section">
+            <n-form-item
+              v-for="item in cfg.cfg"
+              :label="item.label"
+              :label-style="{ color: '#fff' }"
+            >
+              <switch-button
+                v-if="item.type === 'switch'"
+                v-model="setting[cfg.prop][item.prop]"
+              ></switch-button>
+              <input-number
+                v-else-if="item.type === 'number'"
+                v-model="setting[cfg.prop][item.prop]"
+              ></input-number>
+              <form-button v-else-if="item.type === 'btn'" @click="item.cb">{{
+                item.text
+              }}</form-button>
+              <color-picker
+                v-else="item.type === 'color '"
+                v-model:value="setting[cfg.prop][item.prop]"
+                :modes="['hex']"
+              ></color-picker>
+            </n-form-item>
+          </div>
+        </template>
+      </n-form>
+    </n-config-provider>
   </div>
   <shield-list
     :list="setting.shield.list"
@@ -37,7 +43,7 @@
 <script setup lang="ts">
 import { onMounted, reactive, watch } from "vue"
 import { emit } from "@tauri-apps/api/event"
-import { NColorPicker as colorPicker, NForm, NFormItem } from "naive-ui"
+import { NColorPicker as colorPicker, NForm, NFormItem, NConfigProvider, darkTheme } from "naive-ui"
 
 import { save_config, load_config } from "../../src/utils/setting"
 import settingHeader from "./header.vue"
@@ -48,6 +54,7 @@ import shieldList from "./components/shield-list.vue"
 
 const state = reactive({
   show_shield_list: false,
+  darkTheme: darkTheme
 })
 
 const setting = reactive({

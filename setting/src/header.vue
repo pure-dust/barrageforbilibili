@@ -32,6 +32,7 @@ const on_close = async () => {
   padding: 8px 6px 2px;
   font-family: SourceHanSansCN-Bold;
   margin-bottom: 4px;
+  color: var(--primary-color);
 
   .submit-btn {
     margin-left: 16px;
@@ -42,13 +43,14 @@ const on_close = async () => {
     padding: 2px 10px;
     font-size: 12px;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.35);
+    background: #1b1b1b;
     transition: 0.2s;
     user-select: none;
+    color: var(--primary-color);
 
     &:hover {
-      background: #000;
-      color: #fff;
+      background: #3d3d3d;
+      color: var(--primary-color);
     }
   }
 
