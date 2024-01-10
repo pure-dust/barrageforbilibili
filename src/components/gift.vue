@@ -1,7 +1,6 @@
 <template>
   <div class="gift">
     <div
-      style="display: inline"
       class="medal"
       v-if="show_medal && gift.body.user.badge?.active"
       :style="{ backgroundColor: gift.body.user.badge?.color }"

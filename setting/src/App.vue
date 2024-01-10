@@ -90,6 +90,7 @@ const setting = reactive({
   apperance: {
     transparent: false,
     background: "",
+    blur: false
   },
   setting: {
     transparent: false,
@@ -167,6 +168,7 @@ const config = [
     cfg: [
       { label: "透明", type: "switch", prop: "transparent" },
       { label: "背景色", type: "color", prop: "background" },
+      { label: "磨砂", type: "switch", prop: "blur" },
     ],
   },
   // {
@@ -244,7 +246,8 @@ onMounted(async () => {
     margin-bottom: 4px;
     font-family: SourceHanSansCN-Bold;
     padding-bottom: 4px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #7f7f7f;
+    color: var(--primary-color);
   }
 
   .danmu-section {

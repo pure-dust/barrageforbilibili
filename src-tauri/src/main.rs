@@ -4,6 +4,7 @@
 )]
 
 use tauri::Manager;
+use window_vibrancy::{apply_mica, clear_mica};
 
 mod setup;
 mod utils;
@@ -14,6 +15,7 @@ fn main() {
         .on_system_tray_event(setup::handler)
         .invoke_handler(tauri::generate_handler![utils::request::request])
         .setup(|app| {
+            let window = app.get_window("main").unwrap();
             let handler = app.tray_handle().get_item("lock");
             app.listen_global("lock", move |event| {
                 unsafe {
@@ -25,6 +27,14 @@ fn main() {
                         false => "锁定",
                     })
                     .unwrap();
+            });
+            app.listen_global("blur", move |event| {
+                let sign = event.payload().is_some();
+                if sign {
+                    apply_mica(&window, Some(true)).unwrap();
+                } else {
+                    clear_mica(&window).unwrap();
+                }
             });
             Ok(())
         })

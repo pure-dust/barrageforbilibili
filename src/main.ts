@@ -1,5 +1,11 @@
+import * as protobuf from 'protobufjs';
+import  Long from 'long';
 import { createApp } from "vue"
 import { createPinia } from "pinia"
+
+protobuf.util.Long = Long;
+protobuf.configure();
+
 import { init_setting } from "./utils/preload"
 import router from "./router"
 import "./styles/index.less"

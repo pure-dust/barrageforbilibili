@@ -35,6 +35,7 @@ export default {
   setting: {
     transparent: false,
     background: "#D5E7EB",
+    blur: false,
     color: "#000000",
     size: 12,
   },

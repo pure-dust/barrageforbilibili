@@ -43,6 +43,7 @@ interface Setting {
   apperance: {
     transparent: boolean
     background: string
+    blur: boolean
     [key: string]: any
   }
   setting: {

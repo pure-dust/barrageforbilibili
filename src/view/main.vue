@@ -45,7 +45,7 @@
 </template>
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUnmounted, reactive, ref, watch } from "vue"
-import { listen } from "@tauri-apps/api/event"
+import { listen, emit } from "@tauri-apps/api/event"
 import { startListen } from "blive-message-listener/browser"
 import { useRoute } from "vue-router"
 import { DanmuMsg, UserActionMsg, GiftMsg, MessageListener } from "blive-message-listener"
@@ -58,9 +58,12 @@ import { set_vars, load_config } from "../utils/setting"
 import { get_room_info, get_gift_config } from "../api"
 import { useGlobal } from "../store"
 import decode_danmuv2 from "../utils/danmuv2"
+// import { DM } from "../utils/bilibili"
+// import { util } from "protobufjs"
 
 const route = useRoute()
 const { lock } = storeToRefs(useGlobal())
+// const dm = new DM()
 
 const state = reactive({
   is_loaded: false,
@@ -200,12 +203,23 @@ const update_config = (data: Setting) => {
   config.interact = data.interact
   config.shield.list = data.shield.list
   config.shield.level = data.shield.level
+  console.log(data.apperance.blur)
+
+  if (data.apperance.blur) {
+    emit("blur", data.apperance.blur)
+  }
 }
 
 const deal_message = (msg: Message<DanmuMsg> | Message<GiftMsg>) => {
   if (config.shield.list.includes(msg.body.user.uid)) {
     return
   }
+  // let base64 = util.base64.length(msg.raw.dm_v2)
+  // let buffer = new Uint8Array(base64)
+  // util.base64.decode(msg.raw.dm_v2, buffer, 0)
+  // let t = dm.decode(buffer)
+  // console.log(t)
+
   msg.body.user.face = decode_danmuv2(msg.raw.dm_v2)
   let last = state.message_queue.at(-1) || state.message_list.at(-1)
   if (msg.type === "SEND_GIFT" && last?.type === "SEND_GIFT") {
@@ -238,14 +252,14 @@ listen<Setting>("update-config", (evt) => {
   update_config(evt.payload)
 })
 
-let listender: MessageListener | null = null
+let listener: MessageListener | null = null
 
 onMounted(async () => {
   let data = await load_config()
   update_config(data)
-  state.room_id = (await (await get_room_info(+(route.params.id as string))).room_id) + ""
+  state.room_id = (await get_room_info(+(route.params.id as string))).room_id + ""
   await init_gift()
-  listender = startListen(+state.room_id, {
+  listener = startListen(+state.room_id, {
     onIncomeDanmu: deal_message,
     onGift: deal_message,
     onUserAction: (msg) => {
@@ -260,7 +274,7 @@ onUnmounted(() => {
   stop_interact()
   stop_message()
   document.removeEventListener("wheel", on_wheel)
-  listender?.close()
+  listener?.close()
 })
 </script>
 <style lang="less"></style>

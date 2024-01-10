@@ -3,7 +3,7 @@
   <router-view> </router-view>
 </template>
 <script setup lang="ts">
-import { listen } from "@tauri-apps/api/event"
+import { listen, emit } from "@tauri-apps/api/event"
 import { appWindow } from "@tauri-apps/api/window"
 import { useGlobal } from "./store"
 
@@ -14,6 +14,7 @@ const store = useGlobal()
 
 const on_listen_config = async () => {
   let data = await load_config()
+  emit("blur", data.apperance.blur)
   set_vars(data)
 }
 

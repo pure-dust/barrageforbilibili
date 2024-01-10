@@ -910,12 +910,12 @@ bl@^5.0.0:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-blive-message-listener@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/blive-message-listener/-/blive-message-listener-0.4.4.tgz#12e9b6479dbc9745956ec75bb13f5fca66b862e6"
-  integrity sha512-E4ykBZa6avuKH/8kL/1lelwzB3a0FRHMyys4sNsRFHQHlIrlqYkc7bsuXQl0iHQY+lD4lJQ1/NSoU0R+1A6kEA==
+blive-message-listener@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/blive-message-listener/-/blive-message-listener-0.4.7.tgz#cd7658a4043e32f54ee655779ea39221ef504869"
+  integrity sha512-7+qFFm5Gb6wcnGA1XHbrMrnZ/0Yt1Kj4irllMhAeD0SWv7+HUOGcEX5GyQ8eefFSnnEeASb4mRtnE8ZZysKIBA==
   dependencies:
-    tiny-bilibili-ws "^0.0.7"
+    tiny-bilibili-ws "^0.1.9"
 
 boxen@^7.0.0:
   version "7.0.2"
@@ -1570,11 +1570,6 @@ esutils@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
-
-eventemitter3@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-5.0.0.tgz#084eb7f5b5388df1451e63f4c2aafd71b217ccb3"
-  integrity sha512-riuVbElZZNXLeLEoprfNYoDSwTBRR44X3mnhdI1YcnENpWTCsTTVZ2zFuqQcpoyqPQIUXdiPEU0ECAq0KQRaHg==
 
 evtd@^0.2.2, evtd@^0.2.4:
   version "0.2.4"
@@ -2494,7 +2489,7 @@ log-symbols@^5.1.0:
     chalk "^5.0.0"
     is-unicode-supported "^1.1.0"
 
-long@^5.0.0:
+long@^5.0.0, long@^5.2.3:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/long/-/long-5.2.3.tgz#a3ba97f3877cf1d778eccbcb048525ebb77499e1"
   integrity sha512-lcHwpNoggQTObv5apGNCTdJrO69eHOZMi4BNC+rTLER8iHAqGrUVeLh/irVIM7zTw2bOXA8T6uNPeujwOLg/2Q==
@@ -3577,14 +3572,13 @@ through@^2.3.6:
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==
 
-tiny-bilibili-ws@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/tiny-bilibili-ws/-/tiny-bilibili-ws-0.0.7.tgz#4537c693c8e691c1b273f270ee9b8420a5bee15d"
-  integrity sha512-2ZtocYHXXATD2RaMKEkLU57OEm3NdOufOcOz9MQRkhjoD4yvBb9zmnHHepiHB0JMdzoqbLaePJqLF3kgIiVlAQ==
+tiny-bilibili-ws@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/tiny-bilibili-ws/-/tiny-bilibili-ws-0.1.9.tgz#5fe9120f0e05ec2413c3ca50f6fff40096c5dc04"
+  integrity sha512-aL2/txMnHSC7JnBJCv4zg+bJzX7vHRVVpU3VTVaSCnzgRibJiCijGNvnBoFZYiy0lJ/XVLK6rIR9MIHgIPStYQ==
   dependencies:
-    eventemitter3 "^5.0.0"
     pako "^2.1.0"
-    ws "^8.11.0"
+    ws "^8.13.0"
 
 titleize@^1.0.0:
   version "1.0.1"
@@ -3956,7 +3950,7 @@ write-file-atomic@^3.0.3:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
-ws@^8.11.0:
+ws@^8.13.0:
   version "8.13.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.13.0.tgz#9a9fb92f93cf41512a0735c8f4dd09b8a1211cd0"
   integrity sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==
